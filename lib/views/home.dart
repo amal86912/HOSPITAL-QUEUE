@@ -13,7 +13,7 @@ void initializeScreens() {
 }
 
 class Appointments extends StatelessWidget {
-  const Appointments();
+  const Appointments({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class Appointments extends StatelessWidget {
 }
 
 class Profile extends StatelessWidget {
-  const Profile();
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class Profile extends StatelessWidget {
 }
 
 class Queue extends StatelessWidget {
-  const Queue();
+  const Queue({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class Queue extends StatelessWidget {
 }
 
 class Dashboard extends StatelessWidget {
-  const Dashboard();
+  const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +50,14 @@ class Dashboard extends StatelessWidget {
 
 int position = 0;
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

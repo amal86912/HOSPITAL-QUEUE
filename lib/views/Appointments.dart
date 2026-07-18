@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package :get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+// ignore: file_names
+import  'package:flutter/material.dart';
 
-class Appointments extends StatelessWidget {
+class Appointments extends StatefulWidget {
   const Appointments({super.key});
 
   @override
-  State<appointments> createState() => _AppointmentsState();
+  State<Appointments> createState() => _AppointmentsState();
 }
 
 class _AppointmentsState extends State<Appointments> {
@@ -19,15 +18,82 @@ class _AppointmentsState extends State<Appointments> {
                 title: Text("Appointments"),
                 backgroundColor: Colors.cyan,
                 centerTitle: true,
-                backgroundColor: Colors.cyan,
-                (
-                    body: Center(
-                      child: Text("Appointments"),
-                    )
-                )
+               
+        ),
+        body: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                        Text("Appointments", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        SizedBox(height: 20),
+                        Card(
+                          child: ListTile(
+                            title: Text("Today's Appointment", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            subtitle: Text("Details of appointment"),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Card(
+                            child: ListTile(
+                            title: Text("Amal maalim", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            subtitle: Text("9.00 A.M"),
+                            ),
 
-        )
-         );
 
-         
-        
+                        ),
+                        SizedBox(height: 20),
+                        Card(
+                            child: ListTile(
+                            title: Text("Feisal Maalim", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            subtitle: Text("10:30-11:30 A.M"),
+                            )
+                        ),
+                        SizedBox(height: 20),
+                        Card(
+                            child: ListTile(
+                            title: Text("Zumar Maalim", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            subtitle: Text("11:30-12:30 A.M"),
+                            )
+                        ),
+                        SizedBox(height: 30),
+                        Row(
+                            mainAxisAlignment: 
+                            MainAxisAlignment.center,
+                            children: [
+                                MaterialButton(
+                                    color: Colors.cyan,
+                                    minWidth: 200,
+                                    height: 50,
+                                    onPressed: () {},
+                                    child: Text(
+                                        "Add Appointment",
+                                    style:TextStyle(color: Colors.white),
+                                    ),
+                                ),
+                    
+                    ],
+                  )
+                    ],
+                  ),
+                ),
+
+    );
+  }
+}
+
+
+                    
+
+
+
+                            
+
+
+                        
+
+
+
+
+                      
+                      
+                      
