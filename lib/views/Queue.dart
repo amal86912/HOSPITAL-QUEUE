@@ -10,6 +10,6 @@ class QueueScreen extends StatefulWidget {
 class _QueueScreenState extends State<QueueScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Text('queue');
   }
 }

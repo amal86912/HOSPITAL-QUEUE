@@ -2,7 +2,7 @@
 import  'package:flutter/material.dart';
 
 class Appointmentsscreens extends StatefulWidget {
-  const Appointmentsscreens({Key? key}) : super(key: key);
+  const Appointmentsscreens({super.key});
 
   @override
   State<Appointmentsscreens> createState() => _AppointmentsState();

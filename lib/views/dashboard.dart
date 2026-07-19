@@ -1,171 +1,71 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+class dashboardscreen extends StatefulWidget {
+  const dashboardscreen({super.key});
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<dashboardscreen> createState() => _dashboardscreenState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _dashboardscreenState extends State<dashboardscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
-        title: const Text(
-          "Hospital Queue",
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 15),
-            child: Icon(
-              Icons.notifications_none,
-              color: Colors.white,
-            ),
-          )
-        ],
+        title: const Text("Dashboard"),
+        backgroundColor: Colors.cyan,
+        foregroundColor: Colors.white,
+        centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Hello , Amal",
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            const Text(
+              "Welcome Back!",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 30),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.people, color: Colors.cyan),
+                title: const Text("Patients"),
+                subtitle: const Text("250 Registered"),
               ),
-              const SizedBox(height: 5),
-              const Text(
-                "How are you feeling today?",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                ),
+            ),
+            const SizedBox(height: 15),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.calendar_today, color: Colors.green),
+                title: const Text("Appointments"),
+                subtitle: const Text("35 Today"),
               ),
-              const SizedBox(height: 15),
-              GridView.count(
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
-                childAspectRatio: 1.3,
-                children: [
-                  DashboardCard(
-                    color: Colors.blue,
-                    icon: Icons.people,
-                    number: "12",
-                    title: "patients in Queue",
-                  ),
-                  DashboardCard(
-                    color: Colors.green,
-                    icon: Icons.calendar_today,
-                    number: "18",
-                    title: "Appointment",
-                  ),
-                  DashboardCard(
-                    color: Colors.orange,
-                    icon: Icons.local_hospital,
-                    number: "18",
-                    title: "Doctors",
-                  ),
-                  DashboardCard(
-                    color: Colors.purple,
-                    icon: Icons.apartment,
-                    number: "3",
-                    title: "Department",
-                  ),
-                ],
+            ),
+            const SizedBox(height: 15),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.access_time, color: Colors.orange),
+                title: const Text("Current Queue"),
+                subtitle: const Text("12 Patients Waiting"),
               ),
-              const SizedBox(height: 25),
-              const Text(
-                "Today's Summary",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
+            ),
+            const SizedBox(height: 40),
+            MaterialButton(
+              color: Colors.cyan,
+              minWidth: 200,
+              height: 50,
+              onPressed: () {
+                Get.toNamed("/queue");
+              },
+              child: const Text(
+                "View Queue",
+                style: TextStyle(color: Colors.white),
               ),
-              const SizedBox(height: 10),
-              Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(18),
-                  child: Column(
-                    children: [
-                      SummaryRow(
-                        title: "Queue Number",
-                        value: "A027",
-                      ),
-                      const Divider(),
-                      SummaryRow(
-                        title: "Estimated waiting",
-                        value: "25 Minutes",
-                      ),
-                      const Divider(),
-                      SummaryRow(
-                        title: "Department",
-                        value: "General Medicine",
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 25),
-              const Text(
-                "Quick Action",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  ActionButton(
-                    icon: Icons.calendar_month,
-                    text: "Book",
-                  ),
-                ],
-              ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
   }
 }
-
-class ActionButton extends StatelessWidget {
-  final IconData icon;
-  final String text;
-
-  const ActionButton({
-    super.key,
-    required this.icon,
-    required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: () {},
-      icon: Icon(icon, size: 20),
-      label: Text(text),
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
