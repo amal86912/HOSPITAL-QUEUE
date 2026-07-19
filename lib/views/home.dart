@@ -1,23 +1,19 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-late List<Widget> screens;
-
-void initializeScreens() {
-  screens = [
-    const Dashboard(),
-    const Queue(),
-    const Appointments(),
-    const Profile(),
-  ];
-}
+final List<Widget> screens = [
+  const Dashboard(),
+  const Queue(),
+  const Appointments(),
+  const Profile(),
+];
 
 class Appointments extends StatelessWidget {
   const Appointments({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Text('');
   }
 }
 
@@ -26,7 +22,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Text('');
   }
 }
 
@@ -35,7 +31,7 @@ class Queue extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Text('');
   }
 }
 
@@ -44,7 +40,7 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Text('');
   }
 }
 

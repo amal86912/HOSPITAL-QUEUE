@@ -1,14 +1,14 @@
 // ignore: file_names
 import  'package:flutter/material.dart';
 
-class Appointments extends StatefulWidget {
-  const Appointments({super.key});
+class Appointmentsscreens extends StatefulWidget {
+  const Appointmentsscreens({Key? key}) : super(key: key);
 
   @override
-  State<Appointments> createState() => _AppointmentsState();
+  State<Appointmentsscreens> createState() => _AppointmentsState();
 }
 
-class _AppointmentsState extends State<Appointments> {
+class _AppointmentsState extends State<Appointmentsscreens> {
 
 
   @override
