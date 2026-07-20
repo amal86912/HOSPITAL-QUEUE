@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/views/Appointments.dart'
     as appointments_view;
 import 'package:flutter_application_1/views/dashboard.dart';
+import 'package:flutter_application_1/views/Profile.dart' as Profile_view;
 
 final List<Widget> screens = [
   const dashboardscreen(),
   const Queuescreens(),
   const appointments_view.Appointmentsscreens(),
-  const Profilescreens(),
+  const Profile_view.Profilescreen(),
 ];
 
 class Profilescreens extends StatelessWidget {
