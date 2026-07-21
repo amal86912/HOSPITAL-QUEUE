@@ -4,10 +4,11 @@ import 'package:flutter_application_1/views/Appointments.dart'
     as appointments_view;
 import 'package:flutter_application_1/views/dashboard.dart';
 import 'package:flutter_application_1/views/Profile.dart' as Profile_view;
+import 'package:flutter_application_1/views/Queue.dart' as Queue_view;
 
 final List<Widget> screens = [
   const dashboardscreen(),
-  const Queuescreens(),
+  const Queue_view.Queuescreen(),
   const appointments_view.Appointmentsscreens(),
   const Profile_view.Profilescreen(),
 ];

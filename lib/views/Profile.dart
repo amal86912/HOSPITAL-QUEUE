@@ -15,6 +15,7 @@ class _ProfilescreenState extends State<Profilescreen> {
         title: Text("Profile"),
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
+
         centerTitle: true,
       ),
       body: SingleChildScrollView(
